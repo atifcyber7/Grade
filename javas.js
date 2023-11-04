@@ -3,8 +3,10 @@ document.getElementById("gradeForm").addEventListener("submit", function(event) 
     var percentage = parseInt(document.getElementById("percentage").value);
     var grade = "";
 
-    if (percentage >= 80) {
-        grade = "Your Grade isA+";
+    if (percentage > 100) {
+        grade = "Oh Dude, Your input is wrong. Percentage cannot be greater than 100.";
+    } else if (percentage >= 80) {
+        grade = "Your Grade is A+";
     } else if (percentage >= 70) {
         grade = "Your Grade is A";
     } else if (percentage >= 60) {
@@ -12,8 +14,8 @@ document.getElementById("gradeForm").addEventListener("submit", function(event) 
     } else if (percentage >= 50) {
         grade = "Your Grade is C";
     } else {
-        grade = "Oh Dude Your grade is F";
+        grade = "Oh Dude, Your grade is F";
     }
-
+    
     document.getElementById("result").textContent = "Grade: " + grade;
 });
